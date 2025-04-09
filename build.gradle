@@ -41,21 +41,22 @@ repositories {
 	mavenCentral()
 }
 
+configurations {
+	include
+	implementation.extendsFrom(include)
+}
+
 dependencies {
-	implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
+	include platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
 
-    //implementation 'com.google.code.findbugs:jsr305:3.0.2'
-
-	implementation "org.lwjgl:lwjgl"
-	implementation "org.lwjgl:lwjgl-glfw"
-	implementation "org.lwjgl:lwjgl-openal"
-	implementation "org.lwjgl:lwjgl-opengl"
+	include "org.lwjgl:lwjgl"
+	include "org.lwjgl:lwjgl-glfw"
+	include "org.lwjgl:lwjgl-openal"
+	include "org.lwjgl:lwjgl-opengl"
 	runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
 	runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
 	runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
 	runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
-
-    //implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 tasks.named('test') {
@@ -63,6 +64,8 @@ tasks.named('test') {
 }
 
 shadowJar {
+	configurations = [project.configurations.include]
+
     exclude 'net/java/**'
 	exclude 'javax/**'
 }
