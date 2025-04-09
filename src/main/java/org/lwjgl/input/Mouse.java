@@ -380,7 +380,11 @@ public class Mouse {
      */
     public static int getButtonIndex(String buttonName) {
         Integer ret = buttonMap.get(buttonName);
-        return Objects.requireNonNullElse(ret, -1);
+
+        if (ret != null)
+            return ret;
+
+        return -1;
     }
 
     /**
