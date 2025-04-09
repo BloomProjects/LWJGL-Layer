@@ -1,15 +1,5 @@
-# Lwjgl Fusion
-Compatibility layer between lwjgl2 and lwjgl3
+# LWJGL Layer
+This is LWJGL 2 Layer for LWJGL 3. It is forked from [LWJGL-Fusion](https://github.com/EldoDebug/Lwjgl-Fusion) with some improvements.
 
-## Differences from Legacy-Lwjgl3
-* Latest Lwjgl3
-* Delete Fabric Mod
-* Wayland support (not complete)
-
-## Why should use this?
-* Improved performance is expected
-* Can use the latest lwjgl3 features (NanoVG, nfd etc...)
-
-## Credits
-Legacy-Lwjgl3
-https://github.com/Zarzelcow/legacy-lwjgl3
+# Credits
+- [EldoDebug/LWJGL-Fusion](https://github.com/EldoDebug/Lwjgl-Fusion)
