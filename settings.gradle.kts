@@ -14,6 +14,8 @@ include("natives-windows-x86")
 include("natives-linux-arm64")
 include("natives-linux-x64")
 include("natives-linux-arm32")
+include("natives-linux-ppc64le")
+include("natives-linux-riscv64")
 include("natives-macos-arm64")
 include("natives-macos-x64")
 
